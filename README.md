@@ -13,16 +13,22 @@ modélisation en couche analytics
 visualisation dans Power BI
 
 🏗️ Architecture du pipeline
+
 CSV Files
    ↓
+   
 Python (pandas, SQLAlchemy)
    ↓
+   
 PostgreSQL (raw schema)
    ↓
+   
 dbt (staging → marts)
    ↓
+   
 Data Warehouse (analytics schema)
    ↓
+   
 Power BI Dashboard
 
 🧰 Stack technique
