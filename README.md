@@ -1,47 +1,98 @@
-Projet d’Analyse des Ventes Stroopwafel
+🧁 Stroopwafel Sales Analytics Project
 
-📌 Vue d’ensemble
+📌 Overview
 
-Ce projet est un pipeline de données de bout en bout conçu pour analyser la performance des ventes d’une entreprise de distribution.
+Ce projet est un pipeline de données complet (end-to-end) permettant d’analyser les performances de ventes d’une entreprise de distribution.
 
-Il couvre :
+Il simule un environnement réel de Data Engineering avec :
 
-Ingestion des données avec Python
-Stockage des données dans PostgreSQL
-Transformation des données avec dbt
-Visualisation avec Power BI
+ingestion des données
+stockage dans PostgreSQL
+transformation avec dbt
+modélisation en couche analytics
+visualisation dans Power BI
 
-🏗️ Architecture
-
-Fichiers CSV → Python → PostgreSQL (raw) → dbt (staging & marts) → Dashboard Power BI
+🏗️ Architecture du pipeline
+CSV Files
+   ↓
+Python (pandas, SQLAlchemy)
+   ↓
+PostgreSQL (raw schema)
+   ↓
+dbt (staging → marts)
+   ↓
+Data Warehouse (analytics schema)
+   ↓
+Power BI Dashboard
 
 🧰 Stack technique
 Python (pandas, SQLAlchemy)
 PostgreSQL
-dbt (transformation des données)
-Power BI (visualisation)
+dbt (Data Build Tool)
+Power BI
+Git / GitHub
 
-📊 Modèle de données
-Table de faits : fct_sales
-Dimensions :
-dim_products
-dim_employees
-dim_promotions
-dim_shifts
+🗄️ Modélisation des données
 
-📈 Principaux insights
-Identification des produits les plus performants
-Analyse de l’impact des promotions
-Suivi de la performance des employés
+📊 Table de faits
+fct_sales : analyse des ventes au niveau ligne de ticket
+
+📦 Dimensions
+dim_products : catalogue produits
+dim_employees : employés et performance
+dim_promotions : analyse des promotions
+dim_shifts : planning des employés
+
+🔄 Data Pipeline
+
+1. Ingestion (Python)
+Chargement des fichiers CSV
+Nettoyage des données
+Insertion dans PostgreSQL (schéma raw)
+
+3. Transformation (dbt)
+🔹 Staging layer
+Standardisation des données
+Typage des colonnes
+Nettoyage et préparation
+🔹 Marts layer
+Modèles analytiques (dimensions & facts)
+Création de métriques métier
+Jointures entre entités
+🧪 Data Quality (dbt tests)
+not_null constraints
+unique constraints
+relationships integrity
+accepted values validation
+
+✔ Plus de 50 tests exécutés avec succès
+
+📊 Dashboard Power BI
+
+Le dashboard permet de suivre les performances commerciales :
+
+KPI principaux :
+Chiffre d’affaires total
+Quantité vendue
+Produits les plus performants
+Performance des employés
+Impact des promotions
+
+### Aperçu du dashboard
+
+![Dashboard](dbt_project/images/dashboard.png)
+
+📈 Business Insights
+Identification des produits les plus rentables
+Analyse de l’impact des promotions sur les ventes
+Suivi des performances des employés
 Analyse des tendances de ventes dans le temps
-
-🚀 Comment exécuter le projet
+🚀 Installation & exécution
 pip install -r requirements.txt
 python scripts/load_data.py
 dbt run
 dbt test
-
-⚠️ Variables d’environnement
+⚠️ Configuration (.env)
 
 Créer un fichier .env :
 
@@ -50,21 +101,17 @@ DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=your_password
 DB_NAME=stroopwafelshop
+📌 Résultat final
 
-📌 Auteur
+✔ Pipeline complet data engineering
+✔ Modélisation dbt (staging + marts)
+✔ 50+ tests de qualité validés
+✔ Dashboard Power BI interactif
+✔ Projet versionné sur GitHub
+
+👤 Auteur
 
 Aboubacar Doumbia
 
-📊 Dashboard Power BI
-
-Le dashboard permet de visualiser les performances des ventes à travers plusieurs KPI :
-
-- Chiffre d’affaires total
-- Quantité vendue
-- Top produits
-- Performance des employés
-- Impact des promotions
-
-### Aperçu du dashboard
-
-![Dashboard](dbt_project/images/dashboard.png)
+ISE | Data Analyst | Data Engineer Junior
+📍 Côte d’Ivoire
