@@ -67,4 +67,4 @@ Le dashboard permet de visualiser les performances des ventes à travers plusieu
 
 ### Aperçu du dashboard
 
-![Dashboard Power BI](images/dashboard.png)
+![Dashboard](dbt_project/images/dashboard.png)
